@@ -17,6 +17,7 @@
     <!-- Scripts -->
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./dialog-polyfill.js"></script>
     <script type="text/javascript" src="./app.js"></script>
 </head>
 
@@ -27,7 +28,7 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title">Search <i class="fa fa-youtube fa-lg" aria-hidden="true"></i></span>
+                <span class="mdl-layout-title">search <i class="fa fa-youtube fa-lg" aria-hidden="true"></i></span>
                 <div class="mdl-layout-spacer"></div>
                 <form id="search-form" action="#">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -41,30 +42,64 @@
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Search <i class="fa fa-youtube fa-lg" aria-hidden="true"></i></span>
+            <span class="mdl-layout-title">search <i class="fa fa-youtube fa-lg" aria-hidden="true"></i></span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href=""><i class="fa fa-code fa-lg" aria-hidden="true"></i> what is this?</a>
-                <a class="mdl-navigation__link" href="https://github.com/caseyrunnells/search-youtube" target="_blank"><i class="fa fa-code-fork fa-lg" aria-hidden="true"></i> view repo</a>
+                <a class="mdl-navigation__link" id="show-dialog"><i class="fa fa-code fa-lg" aria-hidden="true"></i> what is this?</a>
+
+                <a class="mdl-navigation__link" href="https://github.com/caseyrunnells" target="_blank"><i class="fa fa-code-fork fa-lg" aria-hidden="true"></i> view repo</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
+
+          <dialog class="mdl-dialog">
+            <h4 class="mdl-dialog__title">Allow data collection?</h4>
+            <div class="mdl-dialog__content">
+              <p>
+                Allowing us to collect data will let us get you the information you want faster.
+              </p>
+            </div>
+            <div class="mdl-dialog__actions">
+              <button type="button" class="mdl-button">Agree</button>
+              <button type="button" class="mdl-button close">Disagree</button>
+            </div>
+          </dialog>
+          <script>
+            var dialog = document.querySelector('dialog');
+            var showDialogButton = document.querySelector('#show-dialog');
+            if (! dialog.showModal) {
+              dialogPolyfill.registerDialog(dialog);
+            }
+            showDialogButton.addEventListener('click', function() {
+              dialog.showModal();
+            });
+            dialog.querySelector('.close').addEventListener('click', function() {
+              dialog.close();
+            });
+          </script>
+
+
             <div class="page-content">
                 <div id="results">
                     <ul></ul>
                 </div>
             </div>
+
+            <div class="mdl-layout-spacer"></div>
+
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">&copy;2016 casey runnells</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li>
+                            <a href="https://github.com/caseyrunnells" target="_blank" class="fa fa-github-alt fa-lg" aria-hidden="true"></a>
+                        </li>
+                        <li><a href="https://github.com/caseyrunnells/search-youtube" target="_blank" class="fa fa-code-fork fa-lg" aria-hidden="true"></a></li>
+                    </ul>
+                </div>
+            </footer>
+
         </main>
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">2016 casey runnells</div>
-                <ul class="mdl-mini-footer__link-list">
-                    <li>
-                        <a href="#" class="fa fa-github-alt fa-lg" aria-hidden="true"></a>
-                    </li>
-                    <li><a href="#">Privacy & Terms</a></li>
-                </ul>
-            </div>
-        </footer>
+
     </div>
 </body>
 

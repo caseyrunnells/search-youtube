@@ -35,10 +35,10 @@ $(document).ready(function() {
 
         $.each(videosArray, function(videosArrayKey, videosArrayValue) {
             displayResults += "<li>";
-            displayResults += "<p>" + videosArrayValue.snippet.title + "</p>";
             displayResults += "<a href='https://www.youtube.com/watch?v=" + videosArrayValue.id.videoId + "' target='_blank'>";
             displayResults += "<img src='" + videosArrayValue.snippet.thumbnails.high.url + "'/>";
             displayResults += "</a>";
+            displayResults += "<p>" + videosArrayValue.snippet.title + "</p>";
             displayResults += "</li>";
         });
 
