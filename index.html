@@ -22,18 +22,15 @@
 </head>
 
 <body>
-    <!-- The drawer is always open in large screens. The header is always shown,
-  even in small screens. -->
+    <!-- Header -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span class="mdl-layout-title">search <i class="fa fa-youtube fa-lg" aria-hidden="true"></i></span>
-                <div class="mdl-layout-spacer"></div>
+                <!-- User Input -->
                 <form id="search-form" action="#">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" id="query">
-                        <label class="mdl-textfield__label" for="query">search by keyword...</label>
+                        <label class="mdl-textfield__label" for="query">search youtube...</label>
                     </div>
                     <button class="mdl-button mdl-js-button mdl-button--icon" type="submit">
                       <i class="material-icons">search</i>
@@ -41,14 +38,6 @@
                 </form>
             </div>
         </header>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">search <i class="fa fa-youtube fa-lg" aria-hidden="true"></i></span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" id="show-dialog"><i class="fa fa-code fa-lg" aria-hidden="true"></i> what is this?</a>
-
-                <a class="mdl-navigation__link" href="https://github.com/caseyrunnells" target="_blank"><i class="fa fa-code-fork fa-lg" aria-hidden="true"></i> view repo</a>
-            </nav>
-        </div>
         <main class="mdl-layout__content">
 
           <dialog class="mdl-dialog">
@@ -59,8 +48,7 @@
               </p>
             </div>
             <div class="mdl-dialog__actions">
-              <button type="button" class="mdl-button">Agree</button>
-              <button type="button" class="mdl-button close">Disagree</button>
+              <button type="button" class="mdl-button close">got it!</button>
             </div>
           </dialog>
           <script>
@@ -84,18 +72,20 @@
                 </div>
             </div>
 
+            <div id="intro"><b>Welcome: </b>This is a simple Web app which utilizes the YouTube Data API v3. Enter a keyword or phrase in the field above and the relavent results will be displayed on the page. Hover over a selection and click the image to watch the video on YouTube.</div>
+
+
+
             <div class="mdl-layout-spacer"></div>
 
             <footer class="mdl-mini-footer">
-                <div class="mdl-mini-footer__left-section">
-                    <div class="mdl-logo">&copy;2016 casey runnells</div>
                     <ul class="mdl-mini-footer__link-list">
+                        <li>&copy;2016 casey runnells</li>
                         <li>
                             <a href="https://github.com/caseyrunnells" target="_blank" class="fa fa-github-alt fa-lg" aria-hidden="true"></a>
                         </li>
                         <li><a href="https://github.com/caseyrunnells/search-youtube" target="_blank" class="fa fa-code-fork fa-lg" aria-hidden="true"></a></li>
                     </ul>
-                </div>
             </footer>
 
         </main>
