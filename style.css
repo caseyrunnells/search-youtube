@@ -1,133 +1,90 @@
 /* Search Youtube CSS */
+
 #search-form {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 #intro {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto 5% auto;
-  background-color: #FFF9C4;
-  padding: 16px;
-  border-radius: 2px;
-  color: #212121;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto 5% auto;
+    background-color: #FFF9C4;
+    padding: 16px;
+    border-radius: 2px;
+    color: #212121;
 }
 
 #results {
-  width: 90%;
-  margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 
 #results ul li {
-  list-style: none;
-  float: left;
-  margin: 3%;
-  max-width: 480px;
-  min-height: 430px;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,.14),0 5px 4px -2px rgba(0,0,0,.2),0 2px 5px 0 rgba(0,0,0,.12)
+    list-style: none;
+    float: left;
+    margin: 3%;
+    max-width: 480px;
+    min-height: 430px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .14), 0 5px 4px -2px rgba(0, 0, 0, .2), 0 2px 5px 0 rgba(0, 0, 0, .12)
 }
 
 figure {
-	width: 480px;
-	height: 360px;
-	margin: 0;
-	padding: 0;
-	background: #fff;
-	overflow: hidden;
+    width: 480px;
+    height: 360px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
 }
+
 figure:hover+span {
-	bottom: -36px;
-	opacity: 1;
+    bottom: -36px;
+    opacity: 1;
 }
 
 #results ul li img {
-  width: 100%;
+    width: 100%;
 }
 
 #results ul li figure img {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
+
 #results ul li figure:hover img {
-	-webkit-transform: scale(1.3);
-	transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 #results ul li p {
-  margin: 0;
-  padding: 10px;
-  color: #fff;
-  background: #424242;
-  font-size: 16px;
-  position: relative;
-  height: 50px;
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    background: #424242;
+    font-size: 16px;
+    position: relative;
+    height: 50px;
 }
 
+
 /* Change the layout__content class to Flex (instead of inline-block) to allow spacer to work. */
+
 .mdl-layout__content {
     display: -webkit-flex;
-	display: flex;
+    display: flex;
     -webkit-flex-direction: column;
-	        flex-direction: column;
+    flex-direction: column;
 }
+
 
 /* Footer */
 
 .mdl-mini-footer {
-  min-height: 45px;
+    min-height: 45px;
 }
 
 .mdl-mini-footer__link-list {
-  margin: 0 auto!important;
-}
-
-/* Dialogue Polyfill Support Styles */
-
-dialog {
-  position: absolute;
-  left: 0; right: 0;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: -webkit-fit-content;
-  height: fit-content;
-  margin: auto;
-  border: solid;
-  padding: 1em;
-  background: white;
-  color: black;
-  display: none;
-}
-
-dialog[open] {
-  display: block;
-}
-
-dialog + .backdrop {
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background: rgba(0,0,0,0.1);
-}
-
-/* for small devices, modal dialogs go full-screen */
-@media screen and (max-width: 540px) {
-  dialog[_polyfill_modal] {  /* TODO: implement */
-    top: 0;
-    width: auto;
-    margin: 1em;
-  }
-}
-
-._dialog_overlay {
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-}
-
-dialog.fixed {
-  position: fixed;
-  top: 50%;
-  transform: translate(0, -50%);
+    margin: 0 auto!important;
 }

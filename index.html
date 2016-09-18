@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Seach Youtube</title>
+    <title>Search Youtube</title>
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -20,7 +19,6 @@
     <script type="text/javascript" src="./dialog-polyfill.js"></script>
     <script type="text/javascript" src="./app.js"></script>
 </head>
-
 <body>
     <!-- Header -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -39,58 +37,26 @@
             </div>
         </header>
         <main class="mdl-layout__content">
-
-          <dialog class="mdl-dialog">
-            <h4 class="mdl-dialog__title">Allow data collection?</h4>
-            <div class="mdl-dialog__content">
-              <p>
-                Allowing us to collect data will let us get you the information you want faster.
-              </p>
-            </div>
-            <div class="mdl-dialog__actions">
-              <button type="button" class="mdl-button close">got it!</button>
-            </div>
-          </dialog>
-          <script>
-            var dialog = document.querySelector('dialog');
-            var showDialogButton = document.querySelector('#show-dialog');
-            if (! dialog.showModal) {
-              dialogPolyfill.registerDialog(dialog);
-            }
-            showDialogButton.addEventListener('click', function() {
-              dialog.showModal();
-            });
-            dialog.querySelector('.close').addEventListener('click', function() {
-              dialog.close();
-            });
-          </script>
-
-
             <div class="page-content">
                 <div id="results">
                     <ul></ul>
                 </div>
             </div>
-
-            <div id="intro"><b>Welcome: </b>This is a simple Web app which utilizes the YouTube Data API v3. Enter a keyword or phrase in the field above and the relavent results will be displayed on the page. Hover over a selection and click the image to watch the video on YouTube.</div>
-
-
-
+            <div id="intro"><b>Welcome: </b>This is a simple Web app which utilizes the YouTube Data API v3 to retrieve videos in response to a user's query. Enter a keyword or phrase in the field above and the relavent results will be displayed on the page. Hover over a selection and click on the image to watch the video on YouTube.
+            </div>
             <div class="mdl-layout-spacer"></div>
-
             <footer class="mdl-mini-footer">
-                    <ul class="mdl-mini-footer__link-list">
-                        <li>&copy;2016 casey runnells</li>
-                        <li>
-                            <a href="https://github.com/caseyrunnells" target="_blank" class="fa fa-github-alt fa-lg" aria-hidden="true"></a>
-                        </li>
-                        <li><a href="https://github.com/caseyrunnells/search-youtube" target="_blank" class="fa fa-code-fork fa-lg" aria-hidden="true"></a></li>
-                    </ul>
+                <ul class="mdl-mini-footer__link-list">
+                    <li>&copy;2016 casey runnells</li>
+                    <li>
+                        <a href="https://github.com/caseyrunnells" target="_blank" class="fa fa-github-alt fa-lg" aria-hidden="true"></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/caseyrunnells/search-youtube" target="_blank" class="fa fa-code-fork fa-lg" aria-hidden="true"></a>
+                    </li>
+                </ul>
             </footer>
-
         </main>
-
     </div>
 </body>
-
 </html>
